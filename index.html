@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="List of Bower components">
+		<meta name="author" content="Sindre Sorhus">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Bower components</title>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700,900">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<a href="https://github.com/sindresorhus/bower-components"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		<div class="container">
+			<header class="header row">
+				<div class="span12">
+					<h1>Bower components</h1>
+					<h2>List of available <a href="http://twitter.github.com/bower/">Bower</a> components</h2>
+				</div>
+			</header>
+			<hr>
+			<section class="main">
+				<div id="loading">
+					<p>Loading components...</p>
+					<p><small>Might take some time on first load</small></p>
+				</div>
+				<div id="components"></div>
+			</section>
+			<footer class="credit row">
+				<div class="span12"><a href="http://sindresorhus.com">Site by <img src="http://gravatar.com/avatar/d36a92237c75c5337c17b60d90686bf9.png?s=50" width="25" height="25" alt="Sindre Sorhus">Sindre Sorhus</a></div>
+			</footer>
+		</div>
+	</body>
+	<script type="text/template" id="components-template">
+		<table class="table">
+			<caption>
+				<input style="display:none" class="search input-medium search-query" type="search" placeholder="Search in <%= components.length %> components..." autofocus>
+			</caption>
+			<thead>
+				<tr>
+					<th class="sort" data-sort="name">Name</th>
+					<th class="sort" data-sort="url">Url</th>
+				</tr>
+			</thead>
+			<tbody class="list">
+				<% _.each( components, function( el ) { %>
+					<% var webUrl = el.url.replace('git://', 'https://').replace(/.git$/, ''); %>
+					<tr>
+						<td class="name"><a href="<%- webUrl %>"><%- el.name %></a></td>
+						<td class="url"><a href="<%- webUrl %>"><%- el.url %></a></td>
+					</tr>
+				<% }); %>
+			</tbody>
+		</table>
+	</script>​
+	<script src="dist/main.js"></script>
+	<script>var _gaq=[['_setAccount','UA-25562592-3'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+</html>
