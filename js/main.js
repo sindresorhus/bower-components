@@ -32,7 +32,8 @@
 			valueNames: [
 				'name',
 				'url'
-			]
+			],
+			page: 9999
 		});
 	}
 
