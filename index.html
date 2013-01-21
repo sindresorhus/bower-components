@@ -7,8 +7,9 @@
 		<meta name="author" content="Sindre Sorhus">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>Bower components</title>
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700,900">
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css">
+		<link rel="search" type="application/opensearchdescription+xml" href="opensearch.xml" title="Search components">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
 		<link rel="stylesheet" href="css/main.css">
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,48 +17,78 @@
 	</head>
 	<body>
 		<a href="https://github.com/sindresorhus/bower-components"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-		<div class="container">
-			<header class="header row">
-				<div class="span12">
-					<h1>Bower components</h1>
-					<h2>List of available <a href="http://twitter.github.com/bower/">Bower</a> components</h2>
-				</div>
-			</header>
-			<hr>
-			<section class="main">
-				<div id="loading">
-					<p>Loading components...</p>
-					<p><small>Might take some time on first load</small></p>
-				</div>
-				<div id="components"></div>
-			</section>
-			<footer class="credit row">
-				<div class="span12">Bower is a package manager for the web. Components are self-contained packages containing various kinds of assets, but most often JavaScript.</div>
-				<div class="span12"><a href="http://sindresorhus.com">Site by <img src="http://gravatar.com/avatar/d36a92237c75c5337c17b60d90686bf9.png?s=50" width="25" height="25" alt="Sindre Sorhus">Sindre Sorhus</a></div>
-			</footer>
+		<div class="wrapper">
+			<div class="container">
+				<header class="header row">
+					<div class="span12">
+						<h1>Bower components</h1>
+						<h2>List of available <a href="http://twitter.github.com/bower/">Bower</a> components</h2>
+					</div>
+				</header>
+				<hr>
+				<section class="main">
+					<div id="loading">
+						<p>Loading components...</p>
+					</div>
+					<div id="components" class="row"></div>
+				</section>
+			</div>
+			<div class="push"></div>
 		</div>
+		<footer class="credit">
+			<div class="container">
+				<p class="about">Bower is a package manager for the web.<br>Components are self-contained packages of different kinds of assets, but most often JavaScript.</p>
+				<div class=""><a href="http://twitter.com/sindresorhus"><img src="http://gravatar.com/avatar/d36a92237c75c5337c17b60d90686bf9.png?s=300" width="150" height="150" alt="Sindre Sorhus"></a></div>
+				<a href="https://twitter.com/sindresorhus" class="twitter-follow-button" data-show-count="false">Follow @sindresorhus</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+		</footer>
 	</body>
+	<script type="text/template" id="components-small-template">
+		<div class="span6">
+			<h4><%- title %></h4>
+			<dl class="dl-horizontal">
+				<% _.each(components, function (el) { %>
+					<dt><a title="<%- el.description %>" href="<%- el.website %>"><%- el.name %></a></dt>
+					<dd title="<%- el.description %>"><p><%- el.description %></p></dd>
+				<% }); %>
+			</dl>
+		</div>
+	</script>​
 	<script type="text/template" id="components-template">
-		<table class="table">
+		<table class="table span12">
 			<caption>
 				<input style="display:none" class="search input-medium search-query" type="search" placeholder="Search in <%= components.length %> components..." autofocus>
 			</caption>
 			<thead>
 				<tr>
 					<th class="sort" data-sort="name">Name</th>
-					<th class="sort" data-sort="url">Url</th>
+					<th class="sort" data-sort="description">Description</th>
+					<th class="sort" data-sort="owner">Owner</th>
+					<th class="sort asc" data-sort="created">Created</th>
+					<th class="sort asc" data-sort="updated">Updated</th>
+					<th class="sort asc" data-sort="forks">Forks</th>
+					<th class="sort asc" data-sort="stars">Stars</th>
 				</tr>
 			</thead>
 			<tbody class="list">
-				<% _.each( components, function( el ) { %>
-					<% var webUrl = el.url.replace('git://', 'https://').replace(/.git$/, ''); %>
+				<% _.each(components, function (el) { %>
 					<tr>
-						<td class="name"><a href="<%- webUrl %>"><%- el.name %></a></td>
-						<td class="url"><a href="<%- webUrl %>"><%- el.url %></a></td>
+						<td class="name"><a title="<%- el.description %>" href="<%- el.website %>"><%- el.name %></a></td>
+						<td class="description" title="<%- el.description %>"><p><%- el.description %></p></td>
+						<td class="owner"><%- el.owner %></td>
+						<td class="created"><time datetime="<%- el.created %>"><%- el.created %></time></td>
+						<td class="updated"><time datetime="<%- el.updated %>"><%- el.updated %></time></td>
+						<td class="forks"><%- el.forks %></td>
+						<td class="stars"><%- el.stars %></td>
 					</tr>
 				<% }); %>
 			</tbody>
 		</table>
+		<div class="row pagination pagination-large pagination-centered">
+			<ul class="paging"></ul>
+		</div>
+		<div class="message hide row" id="search-notfound">No matching components found. Take a deep breath and try something else.</div>
 	</script>​
 	<script src="dist/main.js"></script>
 	<script>var _gaq=[['_setAccount','UA-25562592-3'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>

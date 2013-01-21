@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>Bower</ShortName>
+	<Description>Component search</Description>
+	<Tags>component package web</Tags>
+	<Contact>sindresorhus@gmail.com</Contact>
+	<Developer>Sindre Sorhus</Developer>
+	<Url type="text/html" method="get" template="http://sindresorhus.com/bower-components#!/search/{searchTerms}"/>
+	<InputEncoding>UTF-8</InputEncoding>
+	<Image height="16" width="16" type="image/vnd.microsoft.icon"></Image>
+</OpenSearchDescription>
