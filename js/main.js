@@ -68,7 +68,13 @@
 				}
 
 				// back/forward in the list with arrow-keys
-				$(document).on('keyup', function (e) {
+				$(window).on('keyup', function (e) {
+					// ugly hack to prevent pagination when search is focused
+					// easiest way, since I don't control this logic
+					if ($(document.activeElement).is('.search')) {
+						return;
+					}
+
 					var pageBtns = $('#components').find('.paging li');
 
 					if (e.which === 37) {
