@@ -286,7 +286,7 @@ a {
 	}
 }
 
-/* Extend Bootstrap */
+/* extend Bootstrap */
 .pagination ul > li > div {
 	float: left;
 	padding: 4px 12px;
@@ -295,4 +295,8 @@ a {
 	background-color: #ffffff;
 	border: 1px solid #dddddd;
 	border-left-width: 0;
+}
+
+.pagination ul > li > a {
+	cursor: default;
 }

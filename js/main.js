@@ -2,7 +2,7 @@
 (function ($) {
 	'use strict';
 
-	var API_URL = 'http://bower-component-list.herokuapp.com/';
+	var API_URL = 'http://bower-component-list.herokuapp.com';
 
 	function render(data) {
 		var listInit = true;
@@ -78,11 +78,11 @@
 					var pageBtns = $('#components').find('.paging li');
 
 					if (e.which === 37) {
-						pageBtns.filter(':contains(«)').click();
+						pageBtns.filter('.prev').click();
 					}
 
 					if (e.which === 39) {
-						pageBtns.filter(':contains(»)').click();
+						pageBtns.filter('.next').click();
 					}
 				});
 			}
@@ -96,12 +96,9 @@
 		});
 	}
 
-	$(function() {
+	$(function () {
 		$.getJSON(API_URL).then(render).fail(function () {
 			$('#loading p').text('Failed to load component list :(');
 		});
 	});
 })(jQuery);
-
-// pagination?
-// create Listjs bootstrap pagination plugin

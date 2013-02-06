@@ -1,3 +1,5 @@
+/*global $, List */
+'use strict';
 List.prototype.plugins.paging = function(locals, options) {
     var list = this;
     var pagingList;
@@ -6,7 +8,7 @@ List.prototype.plugins.paging = function(locals, options) {
         pagingList = new List(list.listContainer.id, {
             listClass: options.pagingClass || 'paging',
             // scroll page to bottom when clicked to force pagination to be static
-            item: "<li><a class='page' href='javascript:window.scrollTo(0, document.height)'></a></li>", // Have to contain something, can't set valueName at root element
+            item: '<li><a class="page"></a></li>', // Have to contain something, can't set valueName at root element
             valueNames: ['page', 'dotted'],
             searchClass: 'nosearchclass',
             sortClass: 'nosortclass'
@@ -34,6 +36,7 @@ List.prototype.plugins.paging = function(locals, options) {
                 dotted: false
             })[0];
             addEvent(leftBtn.elm, currentPage - 1, page);
+            $(leftBtn.elm).addClass('prev');
         }
 
         for (var i = 1; i <= pages; i++) {
@@ -50,7 +53,7 @@ List.prototype.plugins.paging = function(locals, options) {
                 addEvent(item.elm, i, page);
             } else if (is.dotted(i, left, right, currentPage, innerWindow, pagingList.size())) {
                 var item = pagingList.add({
-                    page: "...",
+                    page: '...',
                     dotted: true
                 })[0];
 
@@ -64,6 +67,7 @@ List.prototype.plugins.paging = function(locals, options) {
                 dotted: false
             })[0];
             addEvent(rightBtn.elm, currentPage + 1, page);
+            $(rightBtn.elm).addClass('next');
         }
     };
 
@@ -89,7 +93,7 @@ List.prototype.plugins.paging = function(locals, options) {
         },
         dottedRight: function(i, left, right, currentPage, innerWindow, currentPageItem) {
             if (pagingList.items[currentPageItem-1].values().dotted) {
-                return false
+                return false;
             } else {
                 return ((i == (right)) && !this.innerWindow(i, currentPage, innerWindow) && !this.right(i, right))
             }
@@ -97,7 +101,7 @@ List.prototype.plugins.paging = function(locals, options) {
     };
 
     var addEvent = function(elm, i, page) {
-       ListJsHelpers.addEvent(elm, 'click', function() {
+       ListJsHelpers.addEvent(elm, 'click', function () {
            list.show((i-1)*page + 1, page);
        });
     };
