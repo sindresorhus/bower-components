@@ -50,7 +50,7 @@
 			<dl class="dl-horizontal">
 				<% _.each(components, function (el) { %>
 					<dt><a title="<%- el.description %>" href="<%- el.website %>"><%- el.name %></a></dt>
-					<dd title="<%- el.description %>"><p><%- el.description %></p></dd>
+					<dd title="<%- el.description %>"><p><%- el.description ? el.description : '&nbsp;' %></p></dd>
 				<% }); %>
 			</dl>
 		</div>
