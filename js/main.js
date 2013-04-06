@@ -9,6 +9,8 @@
 
 		var sortedByCreated = _.sortBy(data, function (el) {
 			return -Date.parse(el.created);
+		}).filter(function (el) {
+			return el.description && el.description.trim() !== '';
 		});
 
 		var latestTpl = _.template($('#components-small-template').html(), {
