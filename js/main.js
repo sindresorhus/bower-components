@@ -93,7 +93,7 @@
 			$('#search-notfound').toggle(list.matchingItems.length === 0);
 		});
 
-		$('.credit img').on('mouseover mouseout', function (e) {
+		$('.profile img').on('mouseover mouseout', function (e) {
 			$(this).toggleClass('animated tada', e.type === 'mouseover');
 		});
 	}

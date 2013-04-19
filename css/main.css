@@ -91,6 +91,10 @@ a {
 	color: #228EC3;
 }
 
+.promo {
+	margin-top: 20px;
+}
+
 .container {
 	padding: 0 10px;
 }
@@ -198,10 +202,46 @@ a {
 	font-weight: 300;
 }
 
-.credit img {
+.profile {
+	position: relative;
+}
+
+.profile .name {
+	font-size: 70px;
+	font-weight: 300;
+	position: absolute;
+	top: 70px;
+	width: 100%;
+}
+
+.profile .name span {
+	margin: 0 40px;
+	opacity: 0;
+	transition: all 0.6s ease-out;
+	-webkit-transition: all 0.6s ease-out;
+	-moz-transition: all 0.6s ease-out;
+	-ms-transition: all 0.6s ease-out;
+}
+
+.credit:hover .name span {
+	opacity: 1;
+}
+.credit:hover .name span:first-child {
+	padding-left: 10px;
+	margin-right: 110px;
+}
+
+.credit:hover .name span:last-child {
+	margin-left: 110px;
+}
+
+.profile img {
 	margin-right: 3px;
 	margin-bottom: 15px;
 	border-radius: 150px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
 }
 
 .message {
@@ -243,6 +283,10 @@ a {
 	.table td.created,
 	.table th[data-sort='updated'],
 	.table td.updated {
+		display: none;
+	}
+
+	.profile .name span {
 		display: none;
 	}
 }
