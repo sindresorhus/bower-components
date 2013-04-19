@@ -1,4 +1,4 @@
-/*global jQuery, _, List */
+/*global jQuery, _, List, featuredList */
 (function ($) {
 	'use strict';
 
@@ -11,6 +11,11 @@
 			return -Date.parse(el.created);
 		}).filter(function (el) {
 			return el.description && el.description.trim() !== '';
+		});
+
+		var featuredTpl = _.template($('#components-small-template').html(), {
+			title: 'Featured components',
+			components: featuredList
 		});
 
 		var latestTpl = _.template($('#components-small-template').html(), {
@@ -33,6 +38,7 @@
 
 		$('#loading').hide();
 		$('#components')
+			.append(featuredTpl)
 			.append(latestTpl)
 			.append(hotTpl)
 			.append(componentsTpl)

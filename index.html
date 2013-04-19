@@ -60,7 +60,7 @@
 		</footer>
 	</body>
 	<script type="text/template" id="components-small-template">
-		<div class="span6">
+		<div class="span4">
 			<h4><%- title %></h4>
 			<dl class="dl-horizontal">
 				<% _.each(components, function (el) { %>
@@ -100,11 +100,13 @@
 				<% }); %>
 			</tbody>
 		</table>
+		<div class="clearfix"></div>
 		<div class="row pagination pagination-large pagination-centered">
 			<ul class="paging"></ul>
 		</div>
 		<div class="message hide row" id="search-notfound">No matching components found. Take a deep breath and try something else.</div>
 	</script>​
+	<script src="featured-list.js"></script>
 	<script src="dist/main.js"></script>
 	<script>var _gaq=[['_setAccount','UA-25562592-3'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 </html>
