@@ -2,7 +2,7 @@
 (function ($) {
 	'use strict';
 
-	var API_URL = 'http://bower-component-list.herokuapp.com';
+	var API_URL = 'https://bower-component-list.herokuapp.com';
 
 	function render(data) {
 		var listInit = true;
