@@ -103,6 +103,9 @@ List.prototype.plugins.paging = function(locals, options) {
     var addEvent = function(elm, i, page) {
        ListJsHelpers.addEvent(elm, 'click', function () {
            list.show((i-1)*page + 1, page);
+           $('body').animate({
+                scrollTop: ($('.search').offset().top - 10) + 'px'
+            }, 'slow');
        });
     };
 
