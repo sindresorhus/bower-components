@@ -1,6 +1,6 @@
 # [Bower components](http://sindresorhus.com/bower-components)
 
-Discover [Bower](http://twitter.github.com/bower/) components.
+Discover [Bower](http://bower.io/) components.
 
 Make sure to check out the [back-end](https://github.com/sindresorhus/bower-component-list/) to see how the data is aggregated.
 
