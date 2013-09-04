@@ -20,7 +20,7 @@
     "url": "git://github.com/sindresorhus/bower-components.git"
   },
   "devDependencies": {
-    "bower": "~0.9.2",
+    "bower": "~1.2.6",
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-uglify": "~0.2.0",

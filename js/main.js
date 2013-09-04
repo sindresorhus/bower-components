@@ -93,6 +93,15 @@
 						pageBtns.filter('.next').click();
 					}
 				});
+			} else {
+				// Update hash on search
+				var query = $.trim($('.search').val());
+
+				if (query !== '') {
+					window.location.hash = '#!/search/' + query;
+				} else {
+					window.location.hash = '';
+				}
 			}
 
 			$('.table thead').toggle(list.matchingItems.length !== 0);

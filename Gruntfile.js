@@ -5,9 +5,9 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		concat: {
 			'dist/main.js': [
-				'components/jquery/jquery.js',
-				'components/jquery-timeago/jquery.timeago.js',
-				'components/lodash/lodash.js',
+				'bower_components/jquery/jquery.js',
+				'bower_components/jquery-timeago/jquery.timeago.js',
+				'bower_components/lodash/lodash.js',
 				'js/vendor/list.js',
 				'js/vendor/list.paging.js',
 				'js/main.js'
