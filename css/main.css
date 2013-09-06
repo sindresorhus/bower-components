@@ -108,7 +108,8 @@ a {
 	padding: 0 10px;
 }
 
-.main p {
+.main h4,
+#loading p {
 	text-align: center;
 }
 
@@ -128,6 +129,16 @@ a {
 	-ms-user-select: none;
 	-o-user-select: none;
 	user-select: none;
+}
+
+.component-desc {
+	overflow: hidden;
+	line-height: 1.1em;
+	height: 2.2em;
+}
+
+#components {
+	margin: 30px 0;
 }
 
 #components h4 {
@@ -353,4 +364,14 @@ a {
 
 .pagination ul > li > a {
 	cursor: default;
+}
+
+@media (min-width: 767px) {
+	.dl-horizontal dt {
+		width: 130px;
+	}
+
+	.dl-horizontal dd {
+		margin-left: 150px;
+	}
 }

@@ -30,7 +30,9 @@
 					<div id="loading">
 						<p>Loading components...</p>
 					</div>
-					<div id="components" class="row"></div>
+					<div class="row components1"></div>
+					<div id="components" class="row components3"></div>
+					<div class="row components2"></div>
 				</section>
 			</div>
 			<div class="push"></div>
@@ -50,12 +52,12 @@
 		</footer>
 	</body>
 	<script type="text/template" id="components-small-template">
-		<div class="span4">
+		<div class="span6">
 			<h4><%- title %></h4>
 			<dl class="dl-horizontal">
 				<% _.each(components, function (el) { %>
 					<dt><a title="<%- el.description %>" href="<%- el.website %>"><%- el.name %></a></dt>
-					<dd title="<%- el.description %>"><p><%= el.description ? _.escape(el.description) : '&nbsp;' %></p></dd>
+					<dd title="<%- el.description %>"><p class="component-desc"><%= el.description ? _.escape(el.description) : '&nbsp;' %></p></dd>
 				<% }); %>
 			</dl>
 		</div>

@@ -4,6 +4,19 @@
 
 	var API_URL = 'https://bower-component-list.herokuapp.com';
 
+	function shuffle(array) {
+		var tmp, current, top = array.length;
+
+		if (top) while(--top) {
+			current = Math.floor(Math.random() * (top + 1));
+			tmp = array[current];
+			array[current] = array[top];
+			array[top] = tmp;
+		}
+
+		return array;
+	}
+
 	function render(data) {
 		var listInit = true;
 
@@ -18,16 +31,21 @@
 			components: featuredList
 		});
 
-		var latestTpl = _.template($('#components-small-template').html(), {
-			title: 'Latest components',
-			components: sortedByCreated.slice(0, 5)
-		});
-
 		var hotTpl = _.template($('#components-small-template').html(), {
 			title: 'Hot components',
 			components: _.sortBy(sortedByCreated.slice(0, 50), function (el) {
 				return -el.stars;
 			}).slice(0, 5)
+		});
+
+		var latestTpl = _.template($('#components-small-template').html(), {
+			title: 'Latest components',
+			components: sortedByCreated.slice(0, 5)
+		});
+
+		var randomTpl = _.template($('#components-small-template').html(), {
+			title: 'Random components',
+			components: shuffle(sortedByCreated).slice(0, 5)
 		});
 
 		var componentsTpl = _.template($('#components-template').html(), {
@@ -37,12 +55,9 @@
 		});
 
 		$('#loading').hide();
-		$('#components')
-			.append(featuredTpl)
-			.append(latestTpl)
-			.append(hotTpl)
-			.append(componentsTpl)
-			.find('.search').show();
+		$('.components1').append(featuredTpl).append(hotTpl);
+		$('.components2').append(latestTpl).append(randomTpl);
+		$('.components3').append(componentsTpl).find('.search').show();
 
 		var list = new List('components', {
 			valueNames: [
@@ -94,9 +109,8 @@
 					}
 				});
 			} else {
-				// Update hash on search
+				// update hash on search
 				var query = $.trim($('.search').val());
-
 				window.location.hash = query === '' ? '' : '#!/search/' + query;
 			}
 
