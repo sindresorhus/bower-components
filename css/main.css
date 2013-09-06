@@ -1,60 +1,73 @@
 .animated {
 	-webkit-animation-duration: 1s;
-		 -moz-animation-duration: 1s;
-			 -o-animation-duration: 1s;
-					animation-duration: 1s;
+	animation-duration: 1s;
 	-webkit-animation-fill-mode: both;
-		 -moz-animation-fill-mode: both;
-			 -o-animation-fill-mode: both;
-					animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 
 .animated.hinge {
 	-webkit-animation-duration: 2s;
-		 -moz-animation-duration: 2s;
-			 -o-animation-duration: 2s;
-					animation-duration: 2s;
+	animation-duration: 2s;
 }
 
 @-webkit-keyframes tada {
-	0% {-webkit-transform: scale(1);}
-	10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
-	30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
-	40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
-	100% {-webkit-transform: scale(1) rotate(0);}
-}
+	0% {
+		-webkit-transform: scale(1);
+	}
 
-@-moz-keyframes tada {
-	0% {-moz-transform: scale(1);}
-	10%, 20% {-moz-transform: scale(0.9) rotate(-3deg);}
-	30%, 50%, 70%, 90% {-moz-transform: scale(1.1) rotate(3deg);}
-	40%, 60%, 80% {-moz-transform: scale(1.1) rotate(-3deg);}
-	100% {-moz-transform: scale(1) rotate(0);}
-}
+	10%, 20% {
+		-webkit-transform: scale(0.9) rotate(-3deg);
+	}
 
-@-o-keyframes tada {
-	0% {-o-transform: scale(1);}
-	10%, 20% {-o-transform: scale(0.9) rotate(-3deg);}
-	30%, 50%, 70%, 90% {-o-transform: scale(1.1) rotate(3deg);}
-	40%, 60%, 80% {-o-transform: scale(1.1) rotate(-3deg);}
-	100% {-o-transform: scale(1) rotate(0);}
+	30%, 50%, 70%, 90% {
+		-webkit-transform: scale(1.1) rotate(3deg);
+	}
+
+	40%, 60%, 80% {
+		-webkit-transform: scale(1.1) rotate(-3deg);
+	}
+
+	100% {
+		-webkit-transform: scale(1) rotate(0);
+	}
 }
 
 @keyframes tada {
-	0% {transform: scale(1);}
-	10%, 20% {transform: scale(0.9) rotate(-3deg);}
-	30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
-	40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
-	100% {transform: scale(1) rotate(0);}
+	0% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+
+	10%, 20% {
+		-webkit-transform: scale(0.9) rotate(-3deg);
+		-ms-transform: scale(0.9) rotate(-3deg);
+		transform: scale(0.9) rotate(-3deg);
+	}
+
+	30%, 50%, 70%, 90% {
+		-webkit-transform: scale(1.1) rotate(3deg);
+		-ms-transform: scale(1.1) rotate(3deg);
+		transform: scale(1.1) rotate(3deg);
+	}
+
+	40%, 60%, 80% {
+		-webkit-transform: scale(1.1) rotate(-3deg);
+		-ms-transform: scale(1.1) rotate(-3deg);
+		transform: scale(1.1) rotate(-3deg);
+	}
+
+	100% {
+		-webkit-transform: scale(1) rotate(0);
+		-ms-transform: scale(1) rotate(0);
+		transform: scale(1) rotate(0);
+	}
 }
 
 .tada {
 	-webkit-animation-name: tada;
-	-moz-animation-name: tada;
-	-o-animation-name: tada;
 	animation-name: tada;
 }
-
 
 html,
 body {
@@ -89,10 +102,6 @@ hr {
 
 a {
 	color: #228EC3;
-}
-
-.promo {
-	margin-top: 20px;
 }
 
 .container {
@@ -147,6 +156,7 @@ a {
 	word-break: break-word;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
+	-ms-hyphens: auto;
 	hyphens: auto;
 }
 
@@ -219,13 +229,12 @@ a {
 	opacity: 0;
 	transition: all 0.6s ease-out;
 	-webkit-transition: all 0.6s ease-out;
-	-moz-transition: all 0.6s ease-out;
-	-ms-transition: all 0.6s ease-out;
 }
 
 .credit:hover .name span {
 	opacity: 1;
 }
+
 .credit:hover .name span:first-child {
 	padding-left: 10px;
 	margin-right: 110px;
@@ -331,6 +340,7 @@ a {
 }
 
 /* extend Bootstrap */
+
 .pagination ul > li > div {
 	float: left;
 	padding: 4px 12px;

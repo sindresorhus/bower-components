@@ -97,11 +97,7 @@
 				// Update hash on search
 				var query = $.trim($('.search').val());
 
-				if (query !== '') {
-					window.location.hash = '#!/search/' + query;
-				} else {
-					window.location.hash = '';
-				}
+				window.location.hash = query === '' ? '' : '#!/search/' + query;
 			}
 
 			$('.table thead').toggle(list.matchingItems.length !== 0);
