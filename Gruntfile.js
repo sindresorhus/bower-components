@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 			'dist/main.js': [
 				'bower_components/jquery/jquery.js',
 				'bower_components/jquery-timeago/jquery.timeago.js',
-				'bower_components/lodash/lodash.js',
+				'bower_components/lodash/dist/lodash.js',
 				'js/vendor/list.js',
 				'js/vendor/list.paging.js',
 				'js/main.js'
