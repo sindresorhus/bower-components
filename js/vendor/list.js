@@ -307,6 +307,7 @@ var List = function(id, options, values) {
 
         searchString = (target === undefined) ? (""+searchString).toLowerCase() : ""+target.value.toLowerCase();
         is = self.items;
+        var origSearchString = searchString;
         // Escape regular expression characters
         searchString = searchString.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 
@@ -326,6 +327,18 @@ var List = function(id, options, values) {
                 for(var j in columns) {
                     if(values.hasOwnProperty(j) && columns[j] !== null) {
                         text = (values[j] != null) ? values[j].toString().toLowerCase() : "";
+
+                        // search for multiple keywords
+                        if (j === 'keywords') {
+                            var keywordsResult = origSearchString.split(' ').every(function (el) {
+                                return text.split(' ').indexOf(el) !== -1;
+                            });
+
+                            if (keywordsResult) {
+                                found = true;
+                            }
+                        }
+
                         if ((searchString !== "") && (text.search(searchString) > -1)) {
                             found = true;
                         }

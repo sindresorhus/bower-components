@@ -67,7 +67,8 @@
 				'created',
 				'updated',
 				'forks',
-				'stars'
+				'stars',
+				'keywords'
 			],
 			page: 10,
 			indexAsync: true,

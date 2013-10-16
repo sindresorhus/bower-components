@@ -88,6 +88,7 @@
 						<td class="updated"><time datetime="<%- el.updated %>"><%- el.updated %></time></td>
 						<td class="forks"><%- el.forks %></td>
 						<td class="stars"><%- el.stars %></td>
+						<td class="keywords hidden"><%- _.isArray(el.keywords) ? el.keywords.join(' ') : '' %></td>
 					</tr>
 				<% }); %>
 			</tbody>
