@@ -6,6 +6,8 @@ Make sure to include [`keywords` in you bower.json](https://docs.google.com/docu
 
 Check out the [back-end](https://github.com/sindresorhus/bower-component-list/) to see how the data is aggregated.
 
+It usually takes an hour for new components to show up on the site.
+
 *Issues regarding components should be reported on the [Bower repo](https://github.com/twitter/bower/issues/new).*
 
 
