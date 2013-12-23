@@ -2,7 +2,7 @@
 
 > Discover [Bower](http://bower.io) components.
 
-Make sure to include [`keywords` in you bower.json](https://docs.google.com/document/d/1APq7oA9tNao1UYWyOm8dKqlRP2blVkROYLZ2fLIjtWc/edit#heading=h.gexwkmadfy56) as the search will make use of those.
+Make sure to include [`keywords` in your bower.json](https://docs.google.com/document/d/1APq7oA9tNao1UYWyOm8dKqlRP2blVkROYLZ2fLIjtWc/edit#heading=h.gexwkmadfy56) as the search will make use of those.
 
 Check out the [back-end](https://github.com/sindresorhus/bower-component-list/) to see how the data is aggregated.
 
