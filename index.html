@@ -60,7 +60,7 @@
 			<h4><%- title %></h4>
 			<dl class="dl-horizontal">
 				<% _.each(components, function (el) { %>
-					<dt><a title="<%- el.description %>" href="<%- el.website %>"><%- el.name %></a></dt>
+					<dt><a title="<%- el.description %>" href="<%- el.website %>" target="_blank"><%- el.name %></a></dt>
 					<dd title="<%- el.description %>"><p class="component-desc"><%= el.description ? _.escape(el.description) : '&nbsp;' %></p></dd>
 				<% }); %>
 			</dl>
@@ -85,7 +85,7 @@
 			<tbody class="list">
 				<% _.each(components, function (el) { %>
 					<tr>
-						<td class="name"><a title="<%- el.description %>" href="<%- el.website %>"><%- el.name %></a></td>
+						<td class="name"><a title="<%- el.description %>" href="<%- el.website %>" target="_blank"><%- el.name %></a></td>
 						<td class="description" title="<%- el.description %>"><p><%- el.description %></p></td>
 						<td class="owner"><%- el.owner %></td>
 						<td class="created"><time datetime="<%- el.created %>"><%- el.created %></time></td>
