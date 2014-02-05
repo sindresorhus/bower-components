@@ -1,14 +1,17 @@
-# [Bower components](http://sindresorhus.com/bower-components)
+# Bower components site
 
-> Discover [Bower](http://bower.io) components.
+**Deprecated** as it's been moved to [the Bower organization](https://github.com/bower/search)
 
-Make sure to include [`keywords` in your bower.json](https://docs.google.com/document/d/1APq7oA9tNao1UYWyOm8dKqlRP2blVkROYLZ2fLIjtWc/edit#heading=h.gexwkmadfy56) as the search will make use of those.
+---
 
-Check out the [back-end](https://github.com/sindresorhus/bower-component-list/) to see how the data is aggregated.
+> Site to discover [Bower](http://bower.io) components
 
-It usually takes an hour for new components to show up on the site.
+Makes it easy to search and discover Bower components. It works by using a [server](https://github.com/bower/search-server) to periodically fetch the registry and join it with GitHub metadata and bower.json/package.json keywords.
 
-*Issues regarding components should be reported on the [Bower repo](https://github.com/twitter/bower/issues/new).*
+
+## Screenshot
+
+![](screenshot.png)
 
 
 ## License
